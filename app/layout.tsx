@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -8,11 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Dark mode default (per brief). Toggle to .light via a client component
-  // when you add a theme switcher.
+  // Dark mode default per brief. Nav + Footer live here so they're shared
+  // across all routes; per-page files just render their content.
   return (
     <html lang="en" className="dark">
-      <body>{children}</body>
+      <body>
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
