@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Qwantaflow — Brand tokens (mirror of styles.css)
+   Dark mode default per product brief. Light mode follows.
+   Edits adopted from BRAND-DELTAS.md (D1, D3–D7).
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* ---- dark mode (default) ---- */
+    --background:          184 32% 5%;
+    --foreground:          180 12% 95%;
+    --muted:               184 18% 12%;
+    --muted-foreground:    180 8%  60%;
+    --secondary:           184 20% 14%;
+    --border:              184 22% 16%;
+    --input:               184 22% 16%;
+    --card:                184 28% 7%;
+
+    --primary:             173 70% 50%;
+    --primary-foreground:  184 38% 6%;
+
+    --accent:              350 75% 60%;
+    --accent-foreground:   0 0% 100%;
+
+    --netops:              173 70% 50%;
+    --netops-soft:         173 50% 12%;
+    --secops:              350 75% 60%;
+    --secops-soft:         350 60% 14%;
+    --agentic:             36  90% 60%;
+    --agentic-soft:        28  80% 12%;
+
+    --destructive:         350 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring:                173 70% 50%;
+    --mark-anchor:         184 35% 35%;
+
+    --sidebar-bg:          184 28% 11%;
+    --sidebar-bg-end:      184 24% 14%;
+    --sidebar-fg:          180 18% 92%;
+    --sidebar-muted:       180 10% 65%;
+    --sidebar-border:      184 28% 16%;
+
+    --radius: 0.5rem;
+  }
+
+  /* Light mode opt-in via .light class on <html>. */
+  .light {
+    --background:          180 25% 99%;
+    --foreground:          184 28% 9%;
+    --muted:               180 14% 95%;
+    --muted-foreground:    184 12% 38%;
+    --secondary:           180 18% 92%;
+    --border:              180 14% 88%;
+    --input:               180 14% 88%;
+    --card:                180 30% 99.5%;
+
+    --primary:             175 77% 32%;
+    --primary-foreground:  0 0% 100%;
+
+    --accent:              350 75% 45%;
+    --accent-foreground:   0 0% 100%;
+
+    --netops:              175 77% 32%;
+    --netops-soft:         175 60% 95%;
+    --secops:              350 75% 45%;
+    --secops-soft:         350 75% 96%;
+    --agentic:             28 88% 45%;
+    --agentic-soft:        28 88% 96%;
+
+    --destructive:         350 75% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring:                175 77% 32%;
+    --mark-anchor:         184 58% 14%;
+
+    --sidebar-bg:          184 42% 9%;
+    --sidebar-bg-end:      184 38% 13%;
+    --sidebar-fg:          180 18% 92%;
+    --sidebar-muted:       180 10% 70%;
+    --sidebar-border:      184 28% 16%;
+  }
+
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Brand-reveal tagline animation */
+@keyframes qfTaglineIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.qf-tagline {
+  opacity: 0;
+  animation: qfTaglineIn 0.55s 2.45s forwards cubic-bezier(0.2, 0.7, 0.2, 1);
+}
